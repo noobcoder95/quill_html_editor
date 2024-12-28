@@ -85,6 +85,7 @@ class _InputUrlWidgetState extends State<InputUrlWidget> {
         onTap: () async {
           await widget.controller.getSelectionRange().then((selectionModel) {
             showModalBottomSheet(
+              // ignore: use_build_context_synchronously
                 context: context,
                 isScrollControlled: true,
                 builder: (context) {
@@ -169,6 +170,7 @@ class _InputUrlWidgetState extends State<InputUrlWidget> {
                             if (isToolTip) {
                               _toolTipKey.currentState!.hideOverlay();
                             } else {
+                              // ignore: use_build_context_synchronously
                               Navigator.pop(context);
                             }
                           });
